@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | NFT preview card component</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: "Outfit", sans-serif;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 100vw;
+        min-height: 100vh;
+        background-color: hsl(217, 54%, 11%);
+      }
+      .card-container {
+        background-color: hsl(216, 50%, 16%);
+        padding: 25px;
+        border-radius: 20px;
+        width: 350px;
+        box-shadow: 0px 40px 0px 1px hsl(215, 48%, 10%),
+          15px 30px 0px 1px hsl(215, 48%, 10%),
+          -15px 30px 0px 1px hsl(215, 48%, 10%),
+          40px 40px 0px 1px hsla(216, 53%, 10%, 0.635),
+          -40px 40px 0px 1px hsla(216, 53%, 10%, 0.635),
+          -40px -30px 0px 1px hsla(216, 53%, 10%, 0.635),
+          40px -30px 0px 1px hsla(216, 53%, 10%, 0.635);
+      }
+      .image-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+      }
+      .image-container img {
+        width: 100%;
+        border-radius: 10px;
+        display: block;
+      }
+      .image-container:hover::after {
+        content: url("./images/icon-view.svg");
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background-color: hsla(178, 100%, 50%, 0.5);
+        left: 0px;
+        top: 0px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .title p {
+        color: hsl(0, 0%, 100%);
+        font-weight: 600;
+        font-size: 20px;
+        padding: 30px 0px;
+        cursor: pointer;
+        transition: 0.3s linear;
+      }
+      .title p:hover {
+        color: hsl(178, 100%, 50%);
+      }
+      .description p {
+        font-size: 18px;
+        color: hsl(215, 51%, 70%);
+        font-weight: 300;
+      }
+      .price-days {
+        padding: 30px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .price-days .price {
+        color: hsl(178, 100%, 50%);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+      }
+      .price-days .price img,
+      .price-days .days img {
+        margin-right: 8px;
+      }
+      .price-days .days {
+        display: flex;
+        align-items: center;
+      }
+      .price-days .days p {
+        color: hsl(215, 51%, 70%);
+        font-weight: 400;
+      }
+      .creater-container {
+        display: flex;
+        align-items: center;
+        padding-top: 20px;
+      }
+      .creater-container .avatar {
+        width: 30px;
+        height: 30px;
+        margin-right: 20px;
+      }
+      .creater-container .avatar img {
+        width: 100%;
+        border-radius: 50%;
+        border: 1px solid hsl(0, 0%, 100%);
+      }
+      .name-container p {
+        color: hsl(215, 51%, 70%);
+      }
+      .name-container .name {
+        color: hsl(0, 0%, 100%);
+        font-weight: 300;
+        cursor: pointer;
+        transition: 0.3s linear;
+      }
+      .name-container .name:hover {
+        color: hsl(178, 100%, 50%);
+      }
+      .line-container hr {
+        border: 1px solid hsl(215, 32%, 27%);
+        border-radius: 50%;
+      }
+      @media (max-width: 420px) {
+        .card-container {
+          margin: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="card-container">
+          <div class="card">
+            <div class="image-container">
+              <img src="./images/image-equilibrium.jpg" alt="" />
+            </div>
+            <div class="content-container">
+              <div class="title">
+                <p>Equilibrium #3429</p>
+              </div>
+              <div class="description">
+                <p>Our Equilibrium collection promotes balance and calm.</p>
+              </div>
+              <div class="price-days">
+                <div class="price">
+                  <img src="./images/icon-ethereum.svg" alt="" />
+                  <p>0.041 ETH</p>
+                </div>
+                <div class="days">
+                  <img src="./images/icon-clock.svg" alt="" />
+                  <p>3 days left</p>
+                </div>
+              </div>
+              <div class="line-container">
+                <hr />
+              </div>
+              <div class="creater-container">
+                <div class="avatar">
+                  <img src="./images/image-avatar.png" alt="" />
+                </div>
+                <div class="name-container">
+                  <p>Creation of <span class="name">Jules Wyvern</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
